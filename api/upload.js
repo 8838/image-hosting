@@ -22,12 +22,12 @@ module.exports = async (req, res) => {
     
     // Create form data for the external API
     const formData = new FormData();
-    formData.append('key', '6d207e02198a847aa98d0a2a901485a5');
+    formData.append('key', '93eecd675daa5330e44e05186d166e6a');
     formData.append('source', fs.createReadStream(imageFile.filepath));
     formData.append('format', 'json');
     try {
       // Make request to the image hosting API
-      const response = await fetch('https://freeimage.host/api/1/upload', {
+      const response = await fetch('https://api.imgbb.com/1/upload', {
         method: 'POST',
         body: formData,
       });
