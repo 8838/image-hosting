@@ -28,23 +28,12 @@
         }
         h1 {
             color: #6a0dad;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             transition: color 0.3s;
         }
         @media (prefers-color-scheme: dark) {
             h1 {
                 color: #9b6dff;
-            }
-        }
-        .description {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #666;
-            max-width: 500px;
-        }
-        @media (prefers-color-scheme: dark) {
-            .description {
-                color: #aaa;
             }
         }
         .upload-area {
@@ -290,7 +279,6 @@
 </head>
 <body>
     <h1><a href="/" style="text-decoration: none; color: inherit;">图床</a></h1>
-    <p class="description">图床, 提供图片托管和图片外链服务, 全球cdn加速.</p>
     <div class="upload-area" id="uploadArea">
         <span id="uploadText">选择图片</span>
         <div id="uploadSpinner" class="spinner" style="display: none;"></div>
