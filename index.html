@@ -52,14 +52,18 @@
             cursor: pointer;
             transition: all 0.3s;
             position: relative;
-            box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
         }
         @media (prefers-color-scheme: dark) {
             .upload-area {
                 background-color: #2a2a2a;
                 border-color: #9b6dff;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+                box-shadow: 0 3px 6px rgba(0,0,0,0.3);
             }
+        }
+        .upload-area:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.15);
         }
         .upload-area.dragover {
             background-color: #e0d4f5;
@@ -95,7 +99,7 @@
             cursor: pointer;
             margin-bottom: 15px;
             transition: all 0.3s;
-            box-shadow: 0 4px 8px rgba(106, 13, 173, 0.4);
+            box-shadow: 0 2px 4px rgba(106, 13, 173, 0.3);
         }
         button:hover {
             background-color: #580e91;
@@ -109,7 +113,7 @@
         @media (prefers-color-scheme: dark) {
             button {
                 background-color: #9b6dff;
-                box-shadow: 0 4px 8px rgba(155, 109, 255, 0.3);
+                box-shadow: 0 2px 4px rgba(155, 109, 255, 0.3);
             }
             button:hover {
                 background-color: #7a4dff;
@@ -130,12 +134,19 @@
             background-color: #fff;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
             transition: all 0.3s;
+        }
+        .image-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
         }
         @media (prefers-color-scheme: dark) {
             .image-item {
                 background-color: #2a2a2a;
+                box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+            }
+            .image-item:hover {
                 box-shadow: 0 5px 12px rgba(0,0,0,0.4);
             }
         }
@@ -212,7 +223,7 @@
             position: relative;
             transition: all 0.3s;
             margin: 0;
-            box-shadow: 0 3px 5px rgba(106, 13, 173, 0.4);
+            box-shadow: 0 2px 3px rgba(106, 13, 173, 0.3);
         }
         .copy-btn:hover {
             background-color: #580e91;
@@ -226,7 +237,7 @@
         @media (prefers-color-scheme: dark) {
             .copy-btn {
                 background-color: #9b6dff;
-                box-shadow: 0 3px 5px rgba(155, 109, 255, 0.3);
+                box-shadow: 0 2px 3px rgba(155, 109, 255, 0.3);
             }
             .copy-btn:hover {
                 background-color: #7a4dff;
@@ -311,7 +322,7 @@
     <form id="uploadForm" enctype="multipart/form-data" style="display: none;">
         <input type="file" id="imageInput" name="image" accept="image/*" multiple>
     </form>
-    < Delivery id="imagesList"></div>
+    <div id="imagesList"></div>
     <div id="maxFilesNotice" class="max-files-notice">列队最多5张图片</div>
 
     <script>
