@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            padding: 40px 20px;
+            padding: 30px 20px;
             margin: 0;
             display: flex;
             flex-direction: column;
@@ -28,7 +28,7 @@
         }
         h1 {
             color: #6a0dad;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             transition: color 0.3s;
         }
         @media (prefers-color-scheme: dark) {
@@ -36,28 +36,46 @@
                 color: #9b6dff;
             }
         }
+        .description {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #666;
+            max-width: 500px;
+        }
+        @media (prefers-color-scheme: dark) {
+            .description {
+                color: #aaa;
+            }
+        }
         .upload-area {
             width: 100%;
             max-width: 500px;
-            height: 200px;
+            height: 160px;
             border: 2px dashed #6a0dad;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            margin-bottom: 20px;
-            margin-top: 30px;
+            margin-bottom: 15px;
+            margin-top: 20px;
             background-color: #fff;
             cursor: pointer;
-            transition: background-color 0.3s, border-color 0.3s;
+            transition: background-color 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
             position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transform: translateY(0);
         }
         @media (prefers-color-scheme: dark) {
             .upload-area {
                 background-color: #2a2a2a;
                 border-color: #9b6dff;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.3);
             }
+        }
+        .upload-area:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
         .upload-area.dragover {
             background-color: #e0d4f5;
@@ -88,43 +106,56 @@
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
-            margin-bottom: 20px;
-            transition: background-color 0.3s;
+            margin-bottom: 15px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         button:hover {
             background-color: #580e91;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
         @media (prefers-color-scheme: dark) {
             button {
                 background-color: #9b6dff;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.3);
             }
             button:hover {
                 background-color: #7a4dff;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.4);
             }
         }
         #imagesList {
             width: 100%;
             max-width: 500px;
-            margin-top: 20px;
+            margin-top: 15px;
         }
         .image-item {
             display: flex;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             background-color: #fff;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            transition: background-color 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            transform: translateY(0);
+        }
+        .image-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
         @media (prefers-color-scheme: dark) {
             .image-item {
                 background-color: #2a2a2a;
-                box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            }
+            .image-item:hover {
+                box-shadow: 0 6px 12px rgba(0,0,0,0.4);
             }
         }
         .image-preview {
             width: 100px;
-            height: 150px;
+            height: 120px;
             flex-shrink: 0;
             overflow: hidden;
             display: flex;
@@ -145,7 +176,7 @@
         }
         .image-info {
             flex-grow: 1;
-            padding: 15px;
+            padding: 12px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -153,9 +184,9 @@
         }
         .image-url {
             background-color: #f1f1f1;
-            padding: 10px 2px;
+            padding: 8px 2px;
             border-radius: 5px;
-            margin: 10px 0;
+            margin: 8px 0;
             font-family: monospace;
             word-break: break-all;
             transition: background-color 0.3s;
@@ -177,7 +208,7 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            margin: 10px 0;
+            margin: 8px 0;
             flex: 1;
         }
         .copy-btn {
@@ -190,15 +221,22 @@
             cursor: pointer;
             min-width: 60px;
             position: relative;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
             margin: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
         }
         @media (prefers-color-scheme: dark) {
             .copy-btn {
                 background-color: #9b6dff;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.3);
             }
             .copy-btn:hover {
                 background-color: #7a4dff;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.4);
             }
         }
         .copy-btn:hover {
@@ -253,7 +291,7 @@
             color: white;
             padding: 15px 20px;
             border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             z-index: 1000;
             opacity: 0;
             transform: translateY(-20px);
@@ -262,6 +300,7 @@
         @media (prefers-color-scheme: dark) {
             .max-files-notice {
                 background-color: #9b6dff;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.4);
             }
         }
         .max-files-notice.show {
@@ -272,6 +311,7 @@
 </head>
 <body>
     <h1><a href="/" style="text-decoration: none; color: inherit;">图床</a></h1>
+    <p class="description">图床, 提供图片托管和图片外链服务, 全球cdn加速.</p>
     <div class="upload-area" id="uploadArea">
         <span id="uploadText">选择图片</span>
         <div id="uploadSpinner" class="spinner" style="display: none;"></div>
