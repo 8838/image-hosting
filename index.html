@@ -61,10 +61,9 @@
             margin-top: 20px;
             background-color: #fff;
             cursor: pointer;
-            transition: background-color 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            transition: background-color 0.3s, border-color 0.3s;
             position: relative;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transform: translateY(0);
         }
         @media (prefers-color-scheme: dark) {
             .upload-area {
@@ -72,10 +71,6 @@
                 border-color: #9b6dff;
                 box-shadow: 0 4px 8px rgba(0,0,0,0.3);
             }
-        }
-        .upload-area:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
         .upload-area.dragover {
             background-color: #e0d4f5;
@@ -107,13 +102,11 @@
             font-size: 16px;
             cursor: pointer;
             margin-bottom: 15px;
-            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            transition: background-color 0.3s;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         button:hover {
             background-color: #580e91;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
         @media (prefers-color-scheme: dark) {
             button {
@@ -122,7 +115,6 @@
             }
             button:hover {
                 background-color: #7a4dff;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.4);
             }
         }
         #imagesList {
@@ -137,20 +129,12 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-            transform: translateY(0);
-        }
-        .image-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transition: background-color 0.3s;
         }
         @media (prefers-color-scheme: dark) {
             .image-item {
                 background-color: #2a2a2a;
                 box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            }
-            .image-item:hover {
-                box-shadow: 0 6px 12px rgba(0,0,0,0.4);
             }
         }
         .image-preview {
@@ -221,13 +205,9 @@
             cursor: pointer;
             min-width: 60px;
             position: relative;
-            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            transition: background-color 0.3s;
             margin: 0;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .copy-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
         }
         @media (prefers-color-scheme: dark) {
             .copy-btn {
@@ -236,7 +216,6 @@
             }
             .copy-btn:hover {
                 background-color: #7a4dff;
-                box-shadow: 0 3px 6px rgba(0,0,0,0.4);
             }
         }
         .copy-btn:hover {
